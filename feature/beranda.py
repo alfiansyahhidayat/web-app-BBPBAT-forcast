@@ -9,10 +9,10 @@ def show():
 
     st.write("📌 Sistem ini bertujuan untuk membantu memprediksi hasil panen ikan air tawar berdasarkan data historis yang tersedia, dengan pendekatan Machine Learning.")
 
-    # Tampilkan logo / gambar utama
-    image = Image.open("alfi/BBPBAT.jpg")
-
-    st.image(image, caption='Budidaya Ikan Air Tawar - BBPBAT Sukabumi', use_column_width=True)
+        # Tampilkan logo / gambar utama
+    # Tampilkan logo / gambar utama dari Google Drive
+    drive_url = "https://drive.google.com/uc?id=1VTnZdd874VlUlM57R__SYKogMRWFLFoK"
+    st.image(drive_url, caption='Budidaya Ikan Air Tawar - BBPBAT Sukabumi', use_column_width=True)
 
     # Fitur Aplikasi
     st.subheader("✨ Fitur Utama Aplikasi")
