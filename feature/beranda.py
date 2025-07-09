@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 def show():
     st.markdown("""
@@ -9,8 +8,7 @@ def show():
 
     st.write("📌 Sistem ini bertujuan untuk membantu memprediksi hasil panen ikan air tawar berdasarkan data historis yang tersedia, dengan pendekatan Machine Learning.")
 
-        # Tampilkan logo / gambar utama
-    # Tampilkan logo / gambar utama dari Google Drive
+    # ✅ Tampilkan logo / gambar utama dari Google Drive (TANPA Image.open)
     drive_url = "https://drive.google.com/uc?id=1VTnZdd874VlUlM57R__SYKogMRWFLFoK"
     st.image(drive_url, caption='Budidaya Ikan Air Tawar - BBPBAT Sukabumi', use_column_width=True)
 
@@ -40,6 +38,3 @@ def show():
     # Video Profil
     st.subheader("🎥 Video Profil BBPBAT")
     st.video("https://youtu.be/DQrQ7nbbrqQ?si=zPRa-8jJFwaZczKt")
-
-
-
