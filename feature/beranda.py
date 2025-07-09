@@ -10,7 +10,7 @@ def show():
     st.write("📌 Sistem ini bertujuan untuk membantu memprediksi hasil panen ikan air tawar berdasarkan data historis yang tersedia, dengan pendekatan Machine Learning.")
 
     # Tampilkan logo / gambar utama
-    image = Image.open("../gambar/BBPBAT.jpg")
+    image = Image.open("BBPBAT.jpg")
 
     st.image(image, caption='Budidaya Ikan Air Tawar - BBPBAT Sukabumi', use_column_width=True)
 
