@@ -1,4 +1,6 @@
 import streamlit as st
+import requests
+import io
 from PIL import Image
 
 def show():
@@ -10,7 +12,10 @@ def show():
     st.write("📌 Sistem ini bertujuan untuk membantu memprediksi hasil panen ikan air tawar berdasarkan data historis yang tersedia, dengan pendekatan Machine Learning.")
 
     # Versi awal: menampilkan gambar dari file lokal
-    image = Image.open("gambar/BBPBAT.jpg")
+    
+    image_url = "https://drive.google.com/uc?export=download&id=1VTnZdd874VlUlM57R__SYKogMRWFLFoK"
+    response = requests.get(image_url)
+    image = Image.open(io.BytesIO(response.content))
     st.image(image, caption='Budidaya Ikan Air Tawar - BBPBAT Sukabumi', use_column_width=True)
 
     # Fitur Aplikasi
