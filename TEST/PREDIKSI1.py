@@ -66,12 +66,7 @@ def show():
         y = df["Produksi Bibit (ekor)"]
         y_pred = model.predict(X)
 
-        st.subheader("Evaluasi Model pada Dataset")
-        st.write(f"R²: {r2_score(y, y_pred):.4f}")
-        mse = mean_squared_error(y, y_pred)
-        rmse = np.sqrt(mse)
-        st.write(f"RMSE: {rmse:.2f}")
-        st.write(f"MAE: {mean_absolute_error(y, y_pred):.2f}")
+
 
         st.subheader("Perbandingan Nilai Aktual vs Prediksi")
         df_compare = df.copy()
