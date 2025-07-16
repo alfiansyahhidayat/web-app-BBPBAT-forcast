@@ -30,7 +30,7 @@ def show():
     st.subheader("🐟 Jenis Komoditas Budidaya Ikan Air Tawar")
     jenis_ikan = [
         "Ikan Mas", "Ikan Nila", "Ikan Lele", "Ikan Patin", "Ikan Gurame", "Ikan mas",
-        "Ikan Arwana", "Ikan Louhan", "Ikan paus", "Ikan Guppy", "Ikan Discus", "Ikan Oscar"
+        "Ikan Arwana", "Ikan Louhan", "Ikan Guppy", "Ikan Discus", "Ikan Oscar"
     ]
     col1, col2 = st.columns(2)
     with col1:
