@@ -29,7 +29,7 @@ def show():
     ph = st.number_input("pH", min_value=0.0)
     do = st.number_input("DO (mg/L)", min_value=0.0)
     amonia = st.number_input("Amonia (mg/L)", min_value=0.0)
-    pakan = st.number_input("Pakan (kg)", min_value=0.0)
+    pakan = st.number_input("Pakan (gram)", min_value=0.0)
 
     input_data = pd.DataFrame({
         "Tahun": [tahun],
