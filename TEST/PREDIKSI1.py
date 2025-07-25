@@ -22,9 +22,7 @@ def show():
 
     st.subheader("Input Data Prediksi Manual")
 
-    tahun = st.number_input("Tahun", min_value=2000, max_value=2100, step=1)
-    bulan = st.number_input("Bulan", min_value=1, max_value=12, step=1)
-    minggu = st.number_input("Minggu ke-", min_value=1, step=1)
+
     suhu = st.number_input("Suhu (°C)", min_value=0.0)
     ph = st.number_input("pH", min_value=0.0)
     do = st.number_input("DO (mg/L)", min_value=0.0)
@@ -62,16 +60,11 @@ def show():
             st.warning(f"⚠️ Dataset tidak memiliki semua kolom: {expected_cols}")
             return
 
-        X = df[["Tahun", "bulan", "Minggu", "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
+        X = df[[ "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
         y = df["Produksi Bibit (ekor)"]
         y_pred = model.predict(X)
 
-        st.subheader("Evaluasi Model pada Dataset")
-        st.write(f"R²: {r2_score(y, y_pred):.4f}")
-        mse = mean_squared_error(y, y_pred)
-        rmse = np.sqrt(mse)
-        st.write(f"RMSE: {rmse:.2f}")
-        st.write(f"MAE: {mean_absolute_error(y, y_pred):.2f}")
+
 
         st.subheader("Perbandingan Nilai Aktual vs Prediksi")
         df_compare = df.copy()
