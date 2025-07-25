@@ -52,7 +52,7 @@ def show():
     if 'dataset' in st.session_state:
         df = st.session_state['dataset']
 
-        expected_cols = ["Tahun", "bulan", "Minggu", "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan", "Produksi Bibit (ekor)"]
+        expected_cols = ["Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan", "Produksi Bibit (ekor)"]
         if not all(col in df.columns for col in expected_cols):
             st.warning(f"⚠️ Dataset tidak memiliki semua kolom: {expected_cols}")
             return
