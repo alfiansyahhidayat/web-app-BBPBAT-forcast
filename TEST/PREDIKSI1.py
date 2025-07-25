@@ -64,7 +64,7 @@ def show():
         y = df["Produksi Bibit (ekor)"]
         y_pred = model.predict(X)
 
-
+ 
 
         st.subheader("Perbandingan Nilai Aktual vs Prediksi")
         df_compare = df.copy()
