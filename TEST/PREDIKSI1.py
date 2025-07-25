@@ -22,9 +22,9 @@ def show():
 
     st.subheader("Input Data Prediksi Manual")
 
-    tahun = st.number_input("Tahun", min_value=2000, max_value=2100, step=1)
-    bulan = st.number_input("Bulan", min_value=1, max_value=12, step=1)
-    minggu = st.number_input("Minggu ke-", min_value=1, step=1)
+    #tahun = st.number_input("Tahun", min_value=2000, max_value=2100, step=1)
+    #bulan = st.number_input("Bulan", min_value=1, max_value=12, step=1)
+    #minggu = st.number_input("Minggu ke-", min_value=1, step=1)
     suhu = st.number_input("Suhu (°C)", min_value=0.0)
     ph = st.number_input("pH", min_value=0.0)
     do = st.number_input("DO (mg/L)", min_value=0.0)
@@ -32,9 +32,9 @@ def show():
     pakan = st.number_input("Pakan (gram)", min_value=0.0)
 
     input_data = pd.DataFrame({
-        "Tahun": [tahun],
-        "bulan": [bulan],
-        "Minggu": [minggu],
+       # "Tahun": [tahun],
+      #  "bulan": [bulan],
+      #  "Minggu": [minggu],
         "Suhu (°C)": [suhu],
         "pH": [ph],
         "DO (mg/L)": [do],
@@ -57,12 +57,12 @@ def show():
     if 'dataset' in st.session_state:
         df = st.session_state['dataset']
 
-        expected_cols = ["Tahun", "bulan", "Minggu", "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan", "Produksi Bibit (ekor)"]
+        expected_cols = [ "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan", "Produksi Bibit (ekor)"]
         if not all(col in df.columns for col in expected_cols):
             st.warning(f"⚠️ Dataset tidak memiliki semua kolom: {expected_cols}")
             return
 
-        X = df[["Tahun", "bulan", "Minggu", "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
+        X = df[["Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
         y = df["Produksi Bibit (ekor)"]
         y_pred = model.predict(X)
 
