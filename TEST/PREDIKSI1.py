@@ -30,9 +30,6 @@ def show():
     pakan = st.number_input("Pakan (kg)", min_value=0.0)
 
     input_data = pd.DataFrame({
-        "Tahun": [tahun],
-        "bulan": [bulan],
-        "Minggu": [minggu],
         "Suhu (°C)": [suhu],
         "pH": [ph],
         "DO (mg/L)": [do],
