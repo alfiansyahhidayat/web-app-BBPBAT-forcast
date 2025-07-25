@@ -60,7 +60,7 @@ def show():
             st.warning(f"⚠️ Dataset tidak memiliki semua kolom: {expected_cols}")
             return
 
-        X = df[[ "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
+        X = df[["Tahun", "bulan", "Minggu", "Suhu (°C)", "pH", "DO (mg/L)", "Amonia (mg/L)", "Pakan"]]
         y = df["Produksi Bibit (ekor)"]
         y_pred = model.predict(X)
 
